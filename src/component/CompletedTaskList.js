@@ -11,8 +11,10 @@ const CompletedTaskList = ({ tasks, taskSwitcher, deleteTask }) => {
             .filter(([_, item]) => item.taskType === "completed")
             .map(([key, item]) => (
               <tr key={key}>
-                <td>{item.taskName}</td>
-                <td>{item.taskTime} hr(s)</td>
+                <td class="text-decoration-line-through">{item.taskName}</td>
+                <td class="text-decoration-line-through">
+                  {item.taskTime} hr(s)
+                </td>
 
                 <td class="text-end">
                   <button
