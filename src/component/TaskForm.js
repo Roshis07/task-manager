@@ -18,7 +18,7 @@ const TaskForm = ({ activeTasks, setActiveTasks }) => {
       onSubmit={taskFormSubmitHandler}
       className="border p-3 rounded shadow-lg"
     >
-      <div class="row mt-3 g-2">
+      <div class="row my-2 g-2">
         <div class="col-md-6">
           <input
             type="text"

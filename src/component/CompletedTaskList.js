@@ -17,7 +17,7 @@ const CompletedTaskList = ({ tasks, taskSwitcher, deleteTask }) => {
                 <td class="text-end">
                   <button
                     onClick={() => taskSwitcher(key)}
-                    class="btn btn-warning"
+                    class="btn btn-warning mx-2"
                   >
                     <i class="fa-solid fa-left-long"></i>
                   </button>

@@ -17,7 +17,7 @@ const ActiveTaskList = ({ tasks, taskSwitcher, deleteTask }) => {
                 <td class="text-end">
                   <button
                     onClick={() => deleteTask(key)}
-                    class="btn btn-danger"
+                    class="btn btn-danger mx-2"
                   >
                     <i class="fa-solid fa-trash"></i>
                   </button>
