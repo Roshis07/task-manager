@@ -1,13 +1,26 @@
 import React from "react";
 
-const TaskForm = () => {
+const TaskForm = ({ activeTasks, setActiveTasks }) => {
+  const taskFormSubmitHandler = (event) => {
+    event.preventDefault();
+    setActiveTasks([
+      ...activeTasks,
+      {
+        taskName: event.target.taskname.value,
+        tasktime: event.target.tasktime.value,
+      },
+    ]);
+  };
   return (
-    <form className="border p-3 rounded shadow-lg">
+    <form
+      onSubmit={taskFormSubmitHandler}
+      className="border p-3 rounded shadow-lg"
+    >
       <div class="row mt-3 g-2">
         <div class="col-md-6">
           <input
             type="text"
-            name="task"
+            name="taskname"
             class="form-control task-input"
             required
             placeholder="Enter a task"
@@ -17,9 +30,10 @@ const TaskForm = () => {
         <div class="col-md-3">
           <input
             type="number"
-            name="hr"
+            name="tasktime"
             class="form-control hrs-input"
             min="1"
+            max="168"
             required
             placeholder="Enter no. of hrs"
           />
