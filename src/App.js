@@ -5,10 +5,18 @@ import CompletedTaskList from "./component/CompletedTaskList";
 
 const App = () => {
   const [activeTasks, setActiveTasks] = React.useState({});
-  const [completedTasks, setCompletedTasks] = React.useState({});
 
   // switch task type from active to completed or completed to active
-  const taskSwitcher = (id) => {};
+  const taskSwitcher = (id) => {
+    setActiveTasks({
+      ...activeTasks,
+      [id]: {
+        ...activeTasks[id],
+        taskType:
+          activeTasks[id].taskType === "completed" ? "active" : "completed",
+      },
+    });
+  };
   return (
     <div class="wrapper">
       <div class="container">
@@ -17,8 +25,8 @@ const App = () => {
         </div>
         <TaskForm activeTasks={activeTasks} setActiveTasks={setActiveTasks} />
         <div class="row mt-5 g-2">
-          <ActiveTaskList activeTasks={activeTasks} />
-          <CompletedTaskList completedTasks={completedTasks} />
+          <ActiveTaskList tasks={activeTasks} taskSwitcher={taskSwitcher} />
+          <CompletedTaskList tasks={activeTasks} taskSwitcher={taskSwitcher} />
         </div>
       </div>
     </div>
