@@ -1,4 +1,5 @@
 import React from "react";
+import { randomStrGenerator } from "../helpers/utils";
 
 const TaskForm = ({ activeTasks, setActiveTasks }) => {
   const taskFormSubmitHandler = (event) => {
@@ -6,6 +7,7 @@ const TaskForm = ({ activeTasks, setActiveTasks }) => {
     setActiveTasks([
       ...activeTasks,
       {
+        id: randomStrGenerator(10),
         taskName: event.target.taskname.value,
         tasktime: event.target.tasktime.value,
       },
