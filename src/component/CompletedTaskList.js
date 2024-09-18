@@ -1,6 +1,6 @@
 import React from "react";
 
-const CompletedTaskList = ({ tasks, taskSwitcher }) => {
+const CompletedTaskList = ({ tasks, taskSwitcher, deleteTask }) => {
   return (
     <div class="col-md">
       <h2 class="text-center">Completed Tasks</h2>
@@ -21,7 +21,10 @@ const CompletedTaskList = ({ tasks, taskSwitcher }) => {
                   >
                     <i class="fa-solid fa-left-long"></i>
                   </button>
-                  <button class="btn btn-danger">
+                  <button
+                    onClick={() => deleteTask(key)}
+                    class="btn btn-danger"
+                  >
                     <i class="fa-solid fa-trash"></i>
                   </button>
                 </td>

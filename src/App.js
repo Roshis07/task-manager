@@ -17,6 +17,13 @@ const App = () => {
       },
     });
   };
+
+  const deleteTask = (id) => {
+    if (window.confirm("Are you sure you want to delete the task?")) {
+      const { [id]: _, ...reaminingTasks } = activeTasks;
+      setActiveTasks(reaminingTasks);
+    }
+  };
   return (
     <div class="wrapper">
       <div class="container">
@@ -25,8 +32,16 @@ const App = () => {
         </div>
         <TaskForm activeTasks={activeTasks} setActiveTasks={setActiveTasks} />
         <div class="row mt-5 g-2">
-          <ActiveTaskList tasks={activeTasks} taskSwitcher={taskSwitcher} />
-          <CompletedTaskList tasks={activeTasks} taskSwitcher={taskSwitcher} />
+          <ActiveTaskList
+            tasks={activeTasks}
+            taskSwitcher={taskSwitcher}
+            deleteTask={deleteTask}
+          />
+          <CompletedTaskList
+            tasks={activeTasks}
+            taskSwitcher={taskSwitcher}
+            deleteTask={deleteTask}
+          />
         </div>
       </div>
     </div>

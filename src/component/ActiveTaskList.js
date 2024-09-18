@@ -1,6 +1,6 @@
 import React from "react";
 
-const ActiveTaskList = ({ tasks, taskSwitcher }) => {
+const ActiveTaskList = ({ tasks, taskSwitcher, deleteTask }) => {
   return (
     <div class="col-md">
       <h2 class="text-center">Active Tasks</h2>
@@ -15,7 +15,10 @@ const ActiveTaskList = ({ tasks, taskSwitcher }) => {
                 <td>{item.taskTime} hr(s)</td>
 
                 <td class="text-end">
-                  <button class="btn btn-danger">
+                  <button
+                    onClick={() => deleteTask(key)}
+                    class="btn btn-danger"
+                  >
                     <i class="fa-solid fa-trash"></i>
                   </button>
                   <button
