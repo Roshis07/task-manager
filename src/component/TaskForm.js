@@ -9,7 +9,8 @@ const TaskForm = ({ activeTasks, setActiveTasks }) => {
       {
         id: randomStrGenerator(10),
         taskName: event.target.taskname.value,
-        tasktime: event.target.tasktime.value,
+        taskTime: event.target.tasktime.value,
+        taskType: "active",
       },
     ]);
   };

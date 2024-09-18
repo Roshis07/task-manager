@@ -10,8 +10,8 @@ const ActiveTaskList = ({ activeTasks }) => {
           {activeTasks.map((item, i) => (
             <tr key={i.id}>
               <td>{i + 1}</td>
-              <td>{item.task}</td>
-              <td>{item.hr} hr(s)</td>
+              <td>{item.taskName}</td>
+              <td>{item.taskTime} hr(s)</td>
 
               <td class="text-end">
                 <button class="btn btn-danger">

@@ -6,7 +6,6 @@ import CompletedTaskList from "./component/CompletedTaskList";
 const App = () => {
   const [activeTasks, setActiveTasks] = React.useState([]);
   const [completedTasks, setCompletedTasks] = React.useState([]);
-  console.log(activeTasks);
 
   return (
     <div class="wrapper">
