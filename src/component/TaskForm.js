@@ -12,7 +12,10 @@ const TaskForm = ({ activeTasks, setActiveTasks }) => {
         taskType: "active",
       },
     });
+
+    event.target.reset();
   };
+
   return (
     <form
       onSubmit={taskFormSubmitHandler}
@@ -23,9 +26,9 @@ const TaskForm = ({ activeTasks, setActiveTasks }) => {
           <input
             type="text"
             name="taskname"
+            placeholder="Enter a task"
             class="form-control task-input"
             required
-            placeholder="Enter a task"
           />
         </div>
 
@@ -33,11 +36,11 @@ const TaskForm = ({ activeTasks, setActiveTasks }) => {
           <input
             type="number"
             name="tasktime"
-            class="form-control hrs-input"
             min="1"
             max="168"
-            required
             placeholder="Enter no. of hrs"
+            class="form-control hrs-input"
+            required
           />
         </div>
 
