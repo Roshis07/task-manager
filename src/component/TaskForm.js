@@ -4,15 +4,14 @@ import { randomStrGenerator } from "../helpers/utils";
 const TaskForm = ({ activeTasks, setActiveTasks }) => {
   const taskFormSubmitHandler = (event) => {
     event.preventDefault();
-    setActiveTasks([
+    setActiveTasks({
       ...activeTasks,
-      {
-        id: randomStrGenerator(10),
+      [randomStrGenerator(10)]: {
         taskName: event.target.taskname.value,
         taskTime: event.target.tasktime.value,
         taskType: "active",
       },
-    ]);
+    });
   };
   return (
     <form

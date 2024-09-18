@@ -4,9 +4,11 @@ import ActiveTaskList from "./component/ActiveTaskList";
 import CompletedTaskList from "./component/CompletedTaskList";
 
 const App = () => {
-  const [activeTasks, setActiveTasks] = React.useState([]);
-  const [completedTasks, setCompletedTasks] = React.useState([]);
+  const [activeTasks, setActiveTasks] = React.useState({});
+  const [completedTasks, setCompletedTasks] = React.useState({});
 
+  // switch task type from active to completed or completed to active
+  const taskSwitcher = (id) => {};
   return (
     <div class="wrapper">
       <div class="container">

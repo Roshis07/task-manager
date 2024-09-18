@@ -7,9 +7,8 @@ const ActiveTaskList = ({ activeTasks }) => {
       <hr />
       <table class="table table-striped table-hover">
         <tbody id="task-list">
-          {activeTasks.map((item, i) => (
-            <tr key={i.id}>
-              <td>{i + 1}</td>
+          {Object.entries(activeTasks).map(([key, item]) => (
+            <tr key={key}>
               <td>{item.taskName}</td>
               <td>{item.taskTime} hr(s)</td>
 
